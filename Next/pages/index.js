@@ -1,11 +1,12 @@
+import 'isomorphic-fetch';
 import React from 'react';
 import Head from 'next/head';
 
-export default () => (
+const Page = ({ title }) => (
   <section>
     <Head>
       <meta charset="utf-8"/>
-      <title>Collusion˟</title>
+      <title>{title}</title>
       <meta name="description" content=""/>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
@@ -52,7 +53,7 @@ export default () => (
       }
     `}</style>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1707.5 960">
-      <title>Collusion</title>
+      <title>{title}</title>
       <defs>
         <clipPath id="a">
           <path d="M0 768h1366V0H0v768z"/>
@@ -65,3 +66,11 @@ export default () => (
     </svg>
   </section>
 );
+
+Page.getInitialProps = async ({ req }) => {
+  const res = await fetch('http://localhost:1337/page/5ad759774406b2548a1ffdff');
+  const json = await res.json();
+  return { title: json.title };
+}
+
+export default Page

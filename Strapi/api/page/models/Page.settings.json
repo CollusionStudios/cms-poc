@@ -2,24 +2,16 @@
   "connection": "default",
   "collectionName": "",
   "info": {
-    "name": "article",
+    "name": "page",
     "description": ""
   },
   "options": {
     "timestamps": true
   },
   "attributes": {
-    "Title": {
+    "title": {
       "multiple": false,
       "type": "string"
-    },
-    "Intro": {
-      "multiple": false,
-      "type": "text"
-    },
-    "Body": {
-      "multiple": false,
-      "type": "text"
     }
   }
 }
