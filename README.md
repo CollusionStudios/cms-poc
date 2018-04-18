@@ -1,2 +1,2 @@
 # cms-poc
-Tests and learnings to inform CMS selection
+Tests and learning's to inform CMS selection.
